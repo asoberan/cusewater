@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<nav class="top-menu">
+				<li><a href="/">Home</a></li>
+				<li><a href="map/">Map</a></li>
+				<li><a href="https://data.syrgov.net">DataCuse API</a></li>
+				<li><a href="about/">About</a></li>
+		</nav>
+	</header>
+	<main>
+		<h1 class="project-title">Cuse Water</h1>
+		<p>Input your address below to look up information about your pipes.</p>
+		<form method="POST" action="map/">
+			<input id="index-input" type="text" placeholder="Submit address" name="address" />
+		</form>
+
+	<aside id="about">
+		<p>Cuse Water is a project that allows you view information about the different kinds of water pipes in Syracuse, NY. In the span of less than twenty-four hours, it moved from being an idea to a submission at CuseHacks 2022, thanks to the hard work of the people below and the data made available by DataCuse. We all hope that this project proves useful or interesting to those who stumble upon it.</p>
+	</aside>
+	</main>
+	<footer>
+		<ul>
+			<li>Made by:</li>
+			<li>Allen Soberanes</li>
+			<li>Isabella Rosales</li>
+			<li>Zeynep Cakmak</li>
+			<li>Alejandra Lopez</li>
+		</ul>
+		<ul>
+			<li>Made with:</li>
+			<li>DataCuse API</li>
+			<li>Flask</li>
+			<li>Folium</li>
+			<li>Vim</li>
+			<li>Love</li>
+		</ul>
+	</footer>
+</body>
+</html>
