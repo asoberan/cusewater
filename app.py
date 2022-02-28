@@ -1,8 +1,8 @@
 import folium
 import branca
-import pandas as pd
 import requests
 import flask
+import pandas as pd
 
 from flask import request
 from folium.plugins import FastMarkerCluster
@@ -82,7 +82,9 @@ def map_index(address=None):
     water_df = get_water_services()
     marker_cluster = create_marker_cluster(water_df)
     
-    if water_df is not None:
+    if water_df is not None:    
+                
+        fig = branca.element.Figure(height='100vh')
         
         if request.method == "POST":
             details = request.form
@@ -99,12 +101,18 @@ def map_index(address=None):
                 marker_cluster.add_child(address_marker)
 
                 map_new = create_map(marker_cluster, location=tuple(address_coords), zoom_start=19)
+    
+                map_new.add_to(fig)
 
-            return flask.render_template("map/index.html", folium_map=map_new._repr_html_())
+            return flask.render_template("map/index.html", folium_map=fig._repr_html_())
 
         map_new = create_map(marker_cluster)
 
-        return flask.render_template("map/index.html", folium_map=map_new._repr_html_())
+        fig = branca.element.Figure(height='100vh')
+    
+        map_new.add_to(fig)
+
+        return flask.render_template("map/index.html", folium_map=fig._repr_html_())
 
     else:
         print("Could not get water services information.")
@@ -113,7 +121,7 @@ def map_index(address=None):
 def index():
     return flask.render_template("index.html")
 
-@app.route("/about/", methods=["GET", "POST"])
+@app.route("/about/", methods=["GET"])
 def about_index():
     return flask.render_template("about/index.html")
 

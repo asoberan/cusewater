@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    background-color: #05214A;
+    background-color: #062858;
     color: white;
 }
 
@@ -31,7 +31,7 @@ header {
 }
 
 .top-menu li {
-    background-color: #05214A;
+    background-color: #062858;
     list-style-type: none;
     width: 100%;
 }
@@ -72,7 +72,7 @@ article, main {
 #about {
     margin-top: 32px;
     padding: 16px;
-    background-color: #05214A;
+    background-color: #062858;
     color: white;
 }
 
@@ -98,6 +98,10 @@ article, main {
     box-shadow: 4px 4px 4px gray;
 }
 
+iframe {
+    height: 100vh;
+}
+
 img {
     position: absolute;
     bottom: 1vw;
@@ -106,14 +110,14 @@ img {
     border: 2px solid black;
 
     max-width: 40%;
-    height: auto;
+    max-height: 40%;
 }
 
 footer {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    background-color: #05214A;
+    background-color: #062858;
     color: white;
     padding: 12px 0 12px 0;
 }
