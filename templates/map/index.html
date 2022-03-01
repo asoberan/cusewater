@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
-</head>
+{% include 'partials/head.html' %}
 <body>
 	<form id="map-form" method="POST" action="">
                 <input type="text" placeholder="Submit address" name="address" />
                 <input type="submit" value="Search">
         </form>
 	{{ folium_map | safe }}
-	<img src="{{ url_for('static',filename='images/legend.png') }}">
+	<img id="legend" src="{{ url_for('static',filename='images/legend.png') }}">
 </body>
 </html>

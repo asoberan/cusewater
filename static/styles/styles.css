@@ -19,10 +19,21 @@ header {
     color: white;
 }
 
+.logo {
+    height: 20px;
+    margin: auto;
+}
+
+.no-hover > a {
+    width: 0;
+    padding: 0;
+    margin: 0;
+}
+
 .top-menu {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     align-items: stretch;
 
@@ -34,9 +45,12 @@ header {
     background-color: #062858;
     list-style-type: none;
     width: 100%;
+    
+    display: flex;
+    align-items: center;
 }
 
-.top-menu li:hover {
+.top-menu li:not(.no-hover):hover {
     filter: brightness(125%)
 }
 
@@ -98,11 +112,7 @@ article, main {
     box-shadow: 4px 4px 4px gray;
 }
 
-iframe {
-    height: 100vh;
-}
-
-img {
+#legend {
     position: absolute;
     bottom: 1vw;
     left: 1vw;
