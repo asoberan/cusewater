@@ -13,6 +13,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
+body:not(#map-body) {
+     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../../static/images/background.png");
+    background-position: center center;
+}
+
 header {
     background-color: #062858;
     color: white;
@@ -63,9 +68,9 @@ article, main {
 
     text-align: center;
 
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../../static/images/background.png");
+    /*background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../../static/images/background.png");
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
 }
 
 .project-title {
@@ -115,6 +120,7 @@ iframe {
     left: 1vw;
 
     border: 2px solid black;
+    box-shadow: 4px 4px 4px gray;
 
     max-width: 40%;
     max-height: 40%;
@@ -133,4 +139,12 @@ footer > ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: none;
 }
